@@ -1,0 +1,86 @@
+﻿<html>
+   <head>
+   	<title> Ejemplo 3: Insercion</title>
+   	<meta content="text/html" charset="utf-8">
+   	<script type="text/javascript">
+   	    var nombre, control, edad, numero, letras;
+   	    numero   = /^([0-9]+$)/;
+   	    letras   = /^(A-Z, a-z, á-ú)+$/:
+
+  	    function Validar(formulario){
+   		control   = formulario.no_control.value;
+                nombre    = formulario.nombre.value;
+   		colonia   = formulario.colonia.value;
+   		telefono  = formulario.telefono.value;
+                carrera   = formulario.carrera.value;	   			
+                if(!numero.test(no_control)){
+                 alert("introduzca numeros");
+                 formulario.no_control.focus();
+                 return false;
+                }
+                if (!letras.test(nombre)){
+   		  alert("introduzca letras");
+   		  formulario.nombre.focus();
+   		  return false;
+   		}
+ 		if (!letras.test(colonia)){
+   		  alert("introduzca letras");
+   		  formulario.colonia.focus();
+   		  return false;
+   		}
+   		if (!numero.test(telefono)){
+   		  alert("introduzca letras");
+   		  formulario.telefono.focus();
+   		  return false;
+   		}
+   		if (!letra.test(carrera)){
+                  alert("introduzca letras");
+                  formulario.carrera.focus();
+                  return false;
+                }
+   	}
+      </script>
+   </head>
+   <body>
+   	   <h2 align="center"> Ejemplo 3: Inserción </h2>
+   	   <hr> <br>
+   	   <form name="formulario" method="post" action="../controllers/alumnos_controllerInser.php" onsubmit="return Validar(this)">
+   	   	  <table align="center">
+               <tr>
+                  <td>  No. de control</td>
+                  <td> <input type="text" name="no_control" value=""></td>
+               </tr>
+   	   	  	<tr>
+   	   	  		<td> Escriba su nombre</td>
+   	   	  		<td> <input type="text" name="nombre" value=""></td>
+   	   	  	</tr>
+   	   	  	<tr>
+   	   	  		<td> Escriba colonia</td>
+   	   	  		<td> <input type="text" name="colonia" value=""></td>
+   	   	  	</tr>
+   	   	  	<tr>
+   	   	  		<td> Escriba teléfono</td>
+   	   	  		<td> <input type="text" name="telefono" value=""></td>
+   	   	  	</tr>
+               <tr>
+                  <td> Carrera</td>
+                  <td> <select name="carrera">
+                          <option>Info </option>>
+                          <option>Elect</option>
+                          <option>Admon</option>
+                          <option>Siste</option>
+                          <option>Tics </option>
+                       </select>
+                  </td>
+               </tr>
+   	   	  	</table>
+   	   	  <table align="center">
+   	   	  	<tr>
+   	   	  		<td><input type="submit" name="boton1" value="Agregar"> </td>
+   	   	  		<td><input type="reset" name="boton2" value="Borrar datos"></td>
+                  <td><input type="reset" name="boton2" value="Salir" onclick="window.history.back()"></td>
+   	   	  	</tr>
+   	   	  </table>
+   	   </form>
+   </body>
+</html>

@@ -1,0 +1,53 @@
+﻿<html>
+   <head>
+   	<title> Ejemplo 4: Eliminar</title>
+   	<meta content="text/html" charset="utf-8">
+   	<script type="text/javascript">
+   	  var nombre, control, edad, numero, letras;
+   	  numero   = /^([0-9]+$)/;
+   	  letras   = /^(A-Z, a-z, á-ú)+$/:
+
+   	 function Validar1(formulario){
+   	    control   = formulario.no_control.value;
+            if(!numero.test(no_control)){
+               alert("introduzca numeros");
+               formulario.no_control.focus();
+               return false;
+            }
+         }
+         function Validar2(formulario){
+            nombre    = formulario.nombre.value;                     
+            if (!letras.test(nombre)){
+               alert("introduzca letras");
+               formulario.nombre.focus();
+               return false;
+            }
+         }
+   	</script>
+   </head>
+   <body>
+   	   <h2 align="center"> Ejemplo 4: Eliminar </h2>
+   	   <hr> <br>
+    
+   	   	  <table align="center" border="1">
+               <tr>
+                  <form name="formulario" method="post" action="../controllers/alumnos_controllerEli.php">
+                  <th>  No. de control</th>
+                  <td> <input type="text" name="no_control" value="" onsubmit=" return Validar1(this)"></td>
+                  <td> <input type="submit" name="boton1" value="Borrar por No control"> </td>
+                  </form>
+               </tr>
+               <tr>
+                  <form name="formulario" method="post" action="../controllers/alumnos_controllerEli.php">
+                  <th>Nombre</th>
+                  <td> <input type="text" name="nombre" value="" onsubmit="Validar2(this)"></td>
+                  <td> <input type="submit" name="boton1" value="Borrar por Nombre"></td>
+                  </form>
+               </tr>
+               <tr>
+                  <th colspan="3"><input type="button" name="Salir" value="Regresar a menú" onclick="window.history.back()"></th>
+               </tr>
+              </table>       
+         
+   </body>
+</html>
