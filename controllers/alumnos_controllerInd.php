@@ -12,5 +12,3 @@
 	$alumno1    = new alumno_model();
         $reg        = $alumno1->ind_alumno($sql);
         require_once("../views/ConAct.php");
-
-?>
